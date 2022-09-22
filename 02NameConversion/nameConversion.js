@@ -19,7 +19,7 @@ convertBtn.addEventListener("click", function() {
 
 const methods = {
     inputValue: function() {
-        return input.value.split(' ');
+        return input.value.replace(/\s+/g,' ').trim().split(' ');
     },
    camelCase : function() {
        let camelCaseArr = this.inputValue().map((word, index)=>{
