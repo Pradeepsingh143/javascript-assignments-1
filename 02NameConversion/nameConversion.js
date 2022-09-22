@@ -82,3 +82,19 @@ resetBtn.addEventListener("click", function() {
         item.innerText = '';
     })
 })
+
+function conversionText(btn, index) {
+    const text = document.querySelectorAll(".case_div p");
+    navigator.clipboard.writeText(text[index].innerHTML);
+}
+
+function copyText() {
+    const copyBtn = document.querySelectorAll(".clipBoard");
+    copyBtn.forEach((btn, index)=>{
+        btn.addEventListener("click", ()=>{
+            console.log(`hit button-${index}`);
+            conversionText(btn, index);
+        });
+    });
+}
+copyText();

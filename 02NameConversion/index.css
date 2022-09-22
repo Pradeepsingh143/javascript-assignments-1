@@ -2,6 +2,10 @@
   color: #f42424
 }
 
+.flex{
+  display: flex;
+}
+
 .naming_conversion {
   margin: 2em;
   padding: 1.4em;
@@ -33,6 +37,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  position: relative;
 }
 
 .case_div {
@@ -61,6 +66,23 @@
   padding: 0em;
   margin: 0em;
   color: black;
+}
+
+.clipBoard{
+  position: absolute;
+  right: 13%;
+  cursor: pointer;
+  font-weight: 900;
+  color: #242b2ed0;
+  font-size: 18px;
+
+}
+.clipBoard:hover{
+  color: #0D0D0D;
+}
+
+.clipBoard:active{
+  color: #eaedf1;
 }
 
 #convert-btn, #reset-btn {
