@@ -81,9 +81,9 @@
   color: #0D0D0D;
 }
 
-.clipBoard:active{
+/* .clipBoard:active{
   color: #eaedf1;
-}
+} */
 
 #convert-btn, #reset-btn {
   outline: none;

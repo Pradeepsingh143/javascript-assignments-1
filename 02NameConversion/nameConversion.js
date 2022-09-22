@@ -86,6 +86,12 @@ resetBtn.addEventListener("click", function() {
 function conversionText(btn, index) {
     const text = document.querySelectorAll(".case_div p");
     navigator.clipboard.writeText(text[index].innerHTML);
+    if (text[index].innerHTML.length > 0) {
+        btn.style.color = "#eaedf1";
+        setTimeout(() => {
+            btn.style.color = "";
+        },1500);
+    }
 }
 
 function copyText() {
