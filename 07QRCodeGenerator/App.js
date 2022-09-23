@@ -14,7 +14,7 @@ qrGeneratorBtn.addEventListener("click", ()=> {
         downloadImg.style.display = "block";
         downloadImg.setAttribute("download", `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`);
         downloadImg.setAttribute("href", `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`);
-        downloadImg.innerHTML = "Download image";
+        downloadImg.innerHTML = "Download QR Code";
         mainDiv.appendChild(downloadImg);
     });
 });
