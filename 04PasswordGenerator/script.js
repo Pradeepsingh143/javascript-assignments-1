@@ -19,7 +19,6 @@ const randomFunc = {
 
 clipboardEl.addEventListener('click', () => {
         navigator.clipboard.writeText(resultEl.innerText);
-        alert(`Password Copied " ${resultEl.innerText} "`);
 });
 
 generateEl.addEventListener('click', () => {
