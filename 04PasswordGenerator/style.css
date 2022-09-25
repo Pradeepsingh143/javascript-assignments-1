@@ -16,6 +16,7 @@ body {
   overflow: hidden;
   padding: 10px;
   margin: 0;
+  position: relative;
 }
 
 h2 {
@@ -88,4 +89,27 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin: 15px 0;
+}
+
+.popup {
+  padding: 20px;
+  background-color: #00D84A;
+  color: white;
+  position: absolute;
+  top: 0;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }
