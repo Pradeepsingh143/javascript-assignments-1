@@ -98,7 +98,6 @@ function copyText() {
     const copyBtn = document.querySelectorAll(".clipBoard");
     copyBtn.forEach((btn, index)=>{
         btn.addEventListener("click", ()=>{
-            console.log(`hit button-${index}`);
             conversionText(btn, index);
         });
     });
