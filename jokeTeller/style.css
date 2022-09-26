@@ -8,7 +8,7 @@ header{
 display: flex;
 margin: auto;
 max-width: 1280px;
-padding: 20px 20px;
+padding: 15px 20px;
 align-items: center;
 }
 
@@ -35,6 +35,38 @@ width: 70px;
 }
 .menu_item:hover{
     color: #a59809;
+}
+
+/* mobilemenu */
+#mobile_menu{
+    display: none;
+}
+
+#mobile_menu_list{
+    position:absolute;
+    top: 80px;
+    right: 0px;
+    width: 100%;
+    background-color:#f9f9f9;
+    z-index: 1;
+    padding: 10px 0;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+}
+
+#mobile_menu_list .menu_item{
+   list-style: none;
+   margin: 35px 40px;
+   font-size: 20px;
+   text-transform: uppercase;
+}
+
+#mobile_menu_list .menu_item:hover{
+    color: #a59809;
+    background-color: transparent;
+ }
+
+.hidden{
+    display: none;
 }
 
 .hero_section{
@@ -81,7 +113,7 @@ width: 70px;
 
 .joke button{
     padding: 15px 30px;
-    margin-top: 40px;
+    margin: 40px 10px 0 10px;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     font-size: 18px;
@@ -111,9 +143,9 @@ width: 70px;
 
 .jokes_cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     margin-top: 80px;
 }
 
@@ -153,7 +185,7 @@ width: 70px;
     font-size: 20px;
 }
 
-.jokeCard #joke_text{
+.jokeCard .joke_text{
     margin-top: 70px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -186,4 +218,95 @@ width: 70px;
     right: 15px;
     font-size: 22px!important;
     cursor: pointer;
+}
+
+
+
+/* mobile screen */
+@media only screen and (max-width: 720px){
+    #menu_list{
+        display: none;
+    }
+
+    .joke h1 {
+        font-size: 32px;
+    }
+
+    .joke{
+        max-width: 900px;
+        min-height: 350px;
+        padding: 20px;
+    }
+    
+
+    .joke_text {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .joke button{
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .category_section{
+        padding: 30px 20px 50px 20px;
+    }
+
+    .page_title{
+        font-size: 28px;
+    }
+
+    .jokes_cards{
+        margin-top: 50px;
+    }
+
+    #mobile_menu{
+        display: block;
+    }
+    
+}
+
+
+/* mobile screen */
+@media only screen and (max-width: 420px){
+    .joke button{
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    .joke{
+        padding: 10px;
+    }
+
+    .category_section{
+        padding: 20px 20px 50px 20px;
+        display: none;
+    }
+
+    .page_title{
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 24px;
+    }
+
+    .jokes_cards{
+        margin-top: 50px;
+    }
+
+    .jokeCard .id{
+        font-size: 18px;
+    }
+    
+    .jokeCard .type{
+        position: absolute;
+        font-size: 18px;
+    }
+    
+    .jokeCard .joke_text{
+        margin-top: 50px;
+        font-size: 17px;
+    }
+    
 }

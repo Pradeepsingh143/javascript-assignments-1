@@ -7,6 +7,7 @@ const categoryTitle = document.querySelector(".category_section .page_title");
 const jokeCards = document.querySelector(".jokes_cards");
 const loadMoreBtn = document.querySelector(".load_more_btn");
 const jokeTellerBtn = document.getElementById("jokeTellerBtn");
+const hamburger = document.getElementById("hamburger");
 
 const randomApiUrl = `https://v2.jokeapi.dev/joke/Any?type=single&amount=9`;
 
@@ -95,3 +96,7 @@ function jokeCardBtn(index) {
     speechSynthesis.speak(voiceSpeak);
 }
 
+hamburger.addEventListener("click", ()=>{
+    const mobileMenuList = document.getElementById("mobile_menu_list");
+    mobileMenuList.classList.toggle("hidden")
+})
