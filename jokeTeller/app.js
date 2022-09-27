@@ -59,44 +59,52 @@ async function getJoke(apiUrl, category) {
                     categorySection.style.display = "block";
                 }
             });
+            jokeTeller()
         })
         .catch((err) => {
             console.log('Error=>:', err);
         });
-        
-        jokeTeller();
 }
 
 
+jokeTellerBtn.addEventListener("click", () => {
+    let text = jokeText.innerHTML;
+    let voiceSpeak = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(voiceSpeak);
+});
 
 function jokeTeller() {
     const speakBtn = document.querySelectorAll(".jokeCard .speakBtn");
-    jokeTellerBtn.addEventListener("click", () => {
-        let text = jokeText.innerText;
-        let voiceSpeak = new SpeechSynthesisUtterance(text);
-        speechSynthesis.speak(voiceSpeak);
-    });
-
-    speakBtn.forEach((ele, index)=>{
-        ele.addEventListener("click", ()=>{
-           jokeCardBtn(index);
+    speakBtn.forEach((ele, index) => {
+        ele.addEventListener("click", () => {
+        jokeCardBtn(ele, index);
         })
     })
-
 }
 
-function jokeCardBtn(index) {
+// joke card speak button
+function jokeCardBtn(ele, index) {
     const jokeArr = [];
     const jokeCardText = document.querySelectorAll(".jokeCard .joke_text");
     jokeCardText.forEach((text) => {
         jokeArr.push(text.innerHTML);
-        });
+    });
 
-     let voiceSpeak = new SpeechSynthesisUtterance(jokeArr[index]);
-    speechSynthesis.speak(voiceSpeak);
+    const speak = speechSynthesis;
+    if (speak.speaking) {
+        speak.cancel();
+    }
+
+    let voiceSpeak = new SpeechSynthesisUtterance(jokeArr[index]);
+    speak.speak(voiceSpeak);
+    ele.style.color = '#12B0E8';
+    setInterval(() => {
+        ele.style.color = '';
+    }, jokeArr[index].length * 75);
 }
 
-hamburger.addEventListener("click", ()=>{
+// Mobile Menu
+hamburger.addEventListener("click", () => {
     const mobileMenuList = document.getElementById("mobile_menu_list");
     mobileMenuList.classList.toggle("hidden")
 })
