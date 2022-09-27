@@ -104,6 +104,7 @@ width: 70px;
 .joke_text{
     margin-top: 40px;
     justify-self: center;
+    word-break: break-word;
 }
 
 .joke_text h2{

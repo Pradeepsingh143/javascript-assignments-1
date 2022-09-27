@@ -8,6 +8,7 @@ const jokeCards = document.querySelector(".jokes_cards");
 const loadMoreBtn = document.querySelector(".load_more_btn");
 const jokeTellerBtn = document.getElementById("jokeTellerBtn");
 const hamburger = document.getElementById("hamburger");
+const mobileMenuList = document.getElementById("mobile_menu_list");
 
 const randomApiUrl = `https://v2.jokeapi.dev/joke/Any?type=single&amount=9`;
 
@@ -20,6 +21,7 @@ menuItems.forEach(element => {
         const category = element.innerHTML;
         const apiUrl = `https://v2.jokeapi.dev/joke/${category}?type=single&amount=9`;
         jokeCards.innerHTML = '';
+        mobileMenuList.classList.toggle("hidden");
         getJoke(apiUrl, category);
     });
 });
@@ -105,6 +107,5 @@ function jokeCardBtn(ele, index) {
 
 // Mobile Menu
 hamburger.addEventListener("click", () => {
-    const mobileMenuList = document.getElementById("mobile_menu_list");
     mobileMenuList.classList.toggle("hidden")
 })
