@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+.pipContainer {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(37, 37, 37);
+}
+
+#startBtn , #reSelect {
+  cursor: pointer;
+  outline: none;
+  width: 150px;
+  height: 75px;
+  font-family: Barlow, sans-serif;
+  font-size: 25px;
+  color: white;
+  text-shadow: 0 2px 5px black;
+  background: linear-gradient(to top, #696969, #575757);
+  border: 2px solid black;
+  border-radius: 7px;
+  box-shadow: inset 0 20px 4px -19px rgba(255, 255, 255, 0.4), 0 12px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+#startBtn:hover {
+  background: linear-gradient(to bottom, #696969, #575757);
+}
+
+#startBtn:active {
+  transform: translateY(3px);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
