@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 20px;
+}
+.container{
+    text-align: center;
+}
+.todo_list{
+    width: 500px;
+    background-color: aquamarine;
+    margin: auto;
+}
+.todo_content{
+  
+}
+
+
+.colorWhite::placeholder{
+    color: white;
+    background-color: rebeccapurple;
+}
+.message_box{
+    position: absolute;
+    background-color: aquamarine;
+    padding: 20px 40px;
+    left: 100px;
+    top: 20px;
+    border-radius: 10px;
+    animation-name: easeInAnimation;
+    animation-duration: 1s;
+}
+
+@keyframes easeInAnimation{
+   0%{left: 0; top : 20px;}
+   100%{left: 100px; top: 20px}
+}
