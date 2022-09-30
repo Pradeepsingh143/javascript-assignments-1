@@ -1,0 +1,126 @@
+@media only screen and (max-width: 1280px) {
+    .message_box {
+        right: 20px;
+        top: 20px;
+        animation-name: easeInAnimation;
+        animation-duration: 1s;
+    }
+
+    @keyframes easeInAnimation {
+        0% {
+            right: 20px;
+            top: 0px;
+        }
+
+        100% {
+            right: 20px;
+            top: 20px
+        }
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    h1 {
+        text-align: left;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        gap: 20px;
+        max-width: 800px;
+        margin: 30px auto;
+    }
+}
+
+
+@media only screen and (max-width: 520px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .todo_list{
+        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .edit_todo_input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px 0 0 6px;
+    }
+
+    .edit_todo_done {
+        font-size: 14px;
+        padding: 9px 8px;
+        width: 60px;
+        border-left: 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .date {
+        padding: 14px 12px;
+    }
+
+    .todo_content #todo_title {
+        padding: 0 12px;
+    }
+
+    .todo_content #todo_text {
+        padding: 8px 12px 0px 12px;
+    }
+
+    .date>h2 {
+        font-size: 15px;
+        font-weight: 600;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .todo_content #todo_title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .todo_content #todo_text {
+        font-size: 16px;
+    }
+
+    .edit_btn_div>.edit_todo,
+    .todo_remove {
+        font-size: 18px;
+    }
+
+    .edit_todo {
+        right: 40px;
+    }
+
+    .todo_remove {
+        right: 12px;
+    }
+
+    .edit_btn_div {
+        gap: 0px;
+        padding: 0 12px 10px 12px;
+    }
+
+    .message_box {
+        right: 10px;
+        top: 20px;
+        font-size: 13px;
+        animation-name: easeInAnimation;
+        animation-duration: 1s;
+    }
+
+    @keyframes easeInAnimation {
+        0% {
+            right: 10px;
+            top: 0px;
+        }
+
+        100% {
+            right: 10px;
+            top: 20px;
+        }
+    }
+}
