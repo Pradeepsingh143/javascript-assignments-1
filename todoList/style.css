@@ -1,34 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Raleway:wght@300;400;600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color : #eec10c;
+    --secondary-color : #917b27;
+    --button-bgcolor : #8a6f04;
+    --primary-text-color : #ffff;
+    --secondary-text-color : #0D0D0D;
+    --warn : #E21717;
+}
+
 body{
     padding: 20px;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23eec10c' fill-opacity='0.24' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+}
+h1{
+    font-size: 42px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
 }
 .container{
-    text-align: center;
-}
-.todo_list{
-    width: 500px;
-    background-color: aquamarine;
-    margin: auto;
-}
-.todo_content{
-  
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto;
 }
 
+.input_todo{
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-text-color);
+}
+
+.input_todo:focus{
+    outline: none;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.input_todo::-webkit-input-placeholder{
+    font-size: 16px;
+}
+
+.input_todo:focus::-webkit-input-placeholder{
+   color: var(--secondary-color);
+}
+
+.btn{
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid var(--secondary-text-color);
+    background-color: var(--button-bgcolor);
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    filter: brightness(120%);
+}
+
+.todo_list{
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.todo_content{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    min-height: 40px;
+}
+
+.date{
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--secondary-text-color);
+    background-color: var(--primary-color);
+    filter: brightness(85%);
+    border-radius: 10px 10px 0 0;
+}
+
+.date > h2{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.todo_content #todo_title{
+    text-align: left;
+    word-break: break-all;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 15px;
+    padding: 0 20px;
+    text-transform: capitalize;
+}
+.todo_content #todo_text{
+    font-size: 18px;
+    word-break: break-all;
+    margin: 10px 0 0 2px;
+    padding: 8px 20px 0px 20px;
+}
+
+.edit_btn_div{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 20px 10px 20px;
+}
+
+.edit_todo_input{
+    flex-grow: 1;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    border: 1px solid var(--secondary-text-color);
+}
+
+.edit_todo_input::-webkit-input-placeholder{
+    font-size: 16px;
+}
+
+.edit_todo_done{
+    padding: 13px 20px;
+    margin-top: 15px;
+}
+
+.edit_btn_div > .edit_todo, .todo_remove{
+    position: absolute;
+    top: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+}
+
+.edit_btn_div > .edit_todo:hover, .todo_remove:hover{
+    color: var(--primary-text-color);
+}
+
+.edit_todo_input{
+    width: 100%;
+}
+
+.edit_todo_done{
+    width: 120px;
+}
+
+.edit_todo{
+    right: 55px;
+}
+
+.todo_remove{
+    right: 15px;
+}
 
 .colorWhite::placeholder{
-    color: white;
-    background-color: rebeccapurple;
+    color: var(--warn);
 }
+
 .message_box{
     position: absolute;
-    background-color: aquamarine;
-    padding: 20px 40px;
-    left: 100px;
+    background-color:var(--primary-color);
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px 30px;
+    right: 100px;
     top: 20px;
     border-radius: 10px;
     animation-name: easeInAnimation;
@@ -36,6 +192,6 @@ body{
 }
 
 @keyframes easeInAnimation{
-   0%{left: 0; top : 20px;}
-   100%{left: 100px; top: 20px}
+   0%{right: 0; top : 20px;}
+   100%{right: 100px; top: 20px}
 }

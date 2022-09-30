@@ -12,9 +12,12 @@ function setTodoList() {
         } else {
             todos = JSON.parse(todoNotes);
         }
+        const date = new Date();
+        const dateFormat  = `${(date.toDateString()).split(' ').join("-")}  (${date.toLocaleTimeString()})`;
         const todoObj = new Object();
-        todoObj.title = todoTitle.value;
+        todoObj.title = `Tittle: ${todoTitle.value}`;
         todoObj.text = todoText.value;
+        todoObj.date = dateFormat;
         todos.push(todoObj);
         localStorage.setItem("todos", JSON.stringify(todos));
         getTodoList();
@@ -35,13 +38,14 @@ function getTodoList() {
         todoArr.forEach((element, index) => {
             todoList.innerHTML += `
         <div class="todo_content">
+            <div class="date"><h2>${element.date}</h2></div>
             <h1 id="todo_title">${element.title}</h1>
             <p id="todo_text">${element.text}</p>
-            <div class="edit_btn">
-            <input type="text" placeholder="Edit todo" class="edit_todo_input" hidden="true">
-            <button id="${index}" class="edit_todo_done" hidden="true">Done</button>
-            <button class="edit_todo">Edit</button>
-            <button id="${index}" onclick="removeBtnFunc(this.id)" class="todo_remove">Remove</button>
+            <div class="edit_btn edit_btn_div">
+            <input type="text" placeholder="edit todo text" class="edit_todo_input" hidden="true">
+            <button id="${index}" class="edit_todo_done btn" hidden="true">Done</button>
+            <button class="edit_todo"><i class="fa fa-edit"></i></button>
+            <button id="${index}" onclick="removeBtnFunc(this.id)" class="todo_remove"><i class="fa fa-trash-o"></i></button>
             </div>
         </div>
         `
@@ -96,6 +100,7 @@ function editTodoFunc() {
                 todos.splice(index, 1, {
                     title: todos[index].title,
                     text: editInputText,
+                    date : todos[index].date,
                 });
                 localStorage.setItem("todos", JSON.stringify(todos));
                 getTodoList();

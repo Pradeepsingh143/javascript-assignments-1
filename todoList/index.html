@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <h1>Todo List</h1>
     <div class="container">
-        <h1>Todo List</h1>
-        <input type="text" placeholder="Enter Todo Title" id="todo_title">
-        <input type="text" placeholder="Enter Todo Content" id="todo_text">
-        <button id="add_todo_btn">Add Todo List</button>
+        <input type="text" placeholder="Enter Todo Title" id="todo_title" class="input_todo">
+        <input type="text" placeholder="Enter Todo Content" id="todo_text" class="input_todo">
+        <button id="add_todo_btn" class="btn">Add Todo List</button>
     </div>
     <div class="todo_list">
         <!-- code -->
