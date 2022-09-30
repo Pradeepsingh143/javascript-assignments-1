@@ -20,6 +20,8 @@ function setTodoList() {
         todoObj.date = dateFormat;
         todos.push(todoObj);
         localStorage.setItem("todos", JSON.stringify(todos));
+        todoTitle.value = '';
+        todoText.value = '';
         getTodoList();
         messageBox("Your todo has been created successfully");
     });

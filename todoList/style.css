@@ -143,6 +143,11 @@ h1{
     margin-top: 15px;
 }
 
+.todo_list{
+    font-size: 22px;
+    font-family: 'Raleway', sans-serif;
+}
+
 .edit_btn_div > .edit_todo, .todo_remove{
     position: absolute;
     top: 15px;
