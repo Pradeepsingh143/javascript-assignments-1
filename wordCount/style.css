@@ -80,7 +80,7 @@ body{
     }
 }
 
-@media only screen and (max-width: 420){
+@media only screen and (max-width: 420px){
 
     #word_counter>.char_length {
         left: 20px;
@@ -88,5 +88,14 @@ body{
     
     #word_counter>.word_count {
         right: 20px;
+    }
+    #word_counter > .word{
+        word-break: break-all;
+        max-width: 650px;
+        margin: 20px auto;
+        text-align: start;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
     }
 }
